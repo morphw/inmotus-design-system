@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>InsaOS Design System — предпросмотр</title>
+    <link rel="stylesheet" href="../tokens/insaos.css" />
+    <link rel="stylesheet" href="../components/insaos.css" />
+    <link rel="stylesheet" href="./preview.css" />
+    <script src="./preview.js" defer></script>
+  </head>
+  <body class="insaos-theme" data-insaos-theme="light">
+    <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.3 13.4a1.5 1.5 0 0 0 0-2.8l-.7-.3a1.5 1.5 0 0 1-.9-1.9l.3-.7a1.5 1.5 0 0 0-2-2l-.7.3a1.5 1.5 0 0 1-1.9-.9l-.3-.7a1.5 1.5 0 0 0-2.8 0l-.3.7a1.5 1.5 0 0 1-1.9.9l-.7-.3a1.5 1.5 0 0 0-2 2l.3.7a1.5 1.5 0 0 1-.9 1.9l-.7.3a1.5 1.5 0 0 0 0 2.8l.7.3a1.5 1.5 0 0 1 .9 1.9l-.3.7a1.5 1.5 0 0 0 2 2l.7-.3a1.5 1.5 0 0 1 1.9.9l.3.7a1.5 1.5 0 0 0 2.8 0l.3-.7a1.5 1.5 0 0 1 1.9-.9l.7.3a1.5 1.5 0 0 0 2-2l-.3-.7a1.5 1.5 0 0 1 .9-1.9z"/></symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1.2a2.1 2.1 0 0 0 1.5-3.6 1.8 1.8 0 0 1 1.3-3.1h2.2A2.8 2.8 0 0 0 21 11.5 8.8 8.8 0 0 0 12 3Z"/><circle cx="7.5" cy="11" r=".8" fill="currentColor" stroke="none"/><circle cx="10" cy="7.5" r=".8" fill="currentColor" stroke="none"/><circle cx="15" cy="7.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.9 7.1L21 11l-7.1 1.9L12 20l-1.9-7.1L3 11l7.1-1.9z"/><path d="m19 18 .6 2.4L22 21l-2.4.6L19 24l-.6-2.4L16 21l2.4-.6z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    </svg>
+
+    <div class="preview-shell">
+      <aside class="preview-sidebar" aria-label="Демонстрационная навигация">
+        <div class="preview-brand"><span class="preview-brand-mark"><svg><use href="#i-grid" /></svg></span><span>InsaOS <small>Design System</small></span></div>
+        <p class="preview-sidebar-label">ОБЗОР</p>
+        <nav>
+          <a class="insa-nav-item" href="#overview" aria-current="page"><svg><use href="#i-home" /></svg>Обзор</a>
+          <a class="insa-nav-item" href="#colors"><svg><use href="#i-palette" /></svg>Цвета и темы</a>
+          <a class="insa-nav-item" href="#components"><svg><use href="#i-layers" /></svg>Компоненты</a>
+        </nav>
+        <div class="preview-sidebar-bottom"><a class="insa-nav-item" href="#patterns"><svg><use href="#i-settings" /></svg>Приёмы интерфейса</a></div>
+      </aside>
+
+      <main class="insa-page preview-main" id="overview">
+        <header class="preview-topbar">
+          <div><p class="preview-eyebrow">ПЕРЕНОСИМЫЙ ВИЗУАЛЬНЫЙ ЯЗЫК</p><h1 class="insa-page-title">Пространство для идей</h1><p class="insa-page-description">Светлая и тёмная темы, спокойные поверхности, мягкие формы и деликатное движение.</p></div>
+          <button class="insa-button insa-button--secondary preview-theme-button" id="theme-toggle" type="button" aria-label="Переключить тему"><svg><use href="#i-moon" /></svg><span>Тёмная тема</span></button>
+        </header>
+
+        <section class="preview-section" id="colors" aria-labelledby="colors-title">
+          <div class="preview-section-heading"><div><p class="preview-eyebrow">01 / ТЕМА</p><h2 id="colors-title">Цветовые акценты</h2></div><span class="preview-meta">Пять оттенков · две темы</span></div>
+          <div class="preview-swatches">
+            <div class="preview-swatch"><span style="--swatch:var(--insa-blue)"></span><strong>Blue</strong><small>Информация</small></div>
+            <div class="preview-swatch"><span style="--swatch:var(--insa-green)"></span><strong>Green</strong><small>Рост</small></div>
+            <div class="preview-swatch"><span style="--swatch:var(--insa-orange)"></span><strong>Orange</strong><small>Энергия</small></div>
+            <div class="preview-swatch"><span style="--swatch:var(--insa-purple)"></span><strong>Purple</strong><small>Фокус</small></div>
+            <div class="preview-swatch"><span style="--swatch:var(--insa-red)"></span><strong>Red</strong><small>Внимание</small></div>
+          </div>
+        </section>
+
+        <section class="preview-section" id="components" aria-labelledby="components-title">
+          <div class="preview-section-heading"><div><p class="preview-eyebrow">02 / КОМПОНЕНТЫ</p><h2 id="components-title">Знакомые элементы</h2></div><span class="preview-meta">Без привязки к библиотеке</span></div>
+          <div class="preview-grid">
+            <article class="insa-card preview-feature-card"><div class="insa-icon-badge" data-accent="purple"><svg><use href="#i-spark" /></svg></div><div><h3>Одна система, разные проекты</h3><p>Выбирай только то, что подходит новому приложению: тему, компоненты или приёмы интерфейса.</p></div><a class="preview-text-link" href="#patterns">Посмотреть приёмы <svg><use href="#i-arrow" /></svg></a></article>
+            <div class="insa-card preview-control-card"><h3>Действия</h3><p>Кнопки с ясной иерархией и мягким откликом.</p><div class="preview-button-row"><button class="insa-button" id="open-dialog" type="button">Основная</button><button class="insa-button insa-button--secondary" type="button">Вторичная</button><button class="insa-button insa-button--quiet" type="button">Тихая</button></div></div>
+            <div class="insa-card preview-control-card"><h3>Ввод и выбор</h3><p>Приглушённое поле и компактное переключение.</p><label class="preview-field-label" for="preview-input">Название проекта</label><input class="insa-input" id="preview-input" placeholder="Новая идея" /><div class="insa-segmented" role="group" aria-label="Вид предпросмотра"><button type="button" aria-pressed="true">Карточки</button><button type="button" aria-pressed="false">Список</button></div></div>
+            <div class="insa-card preview-control-card preview-accents"><h3>Разделы</h3><p>Акцентные иконки связывают карточки с навигацией.</p><div class="preview-accent-row"><div class="insa-icon-badge" data-accent="blue"><svg><use href="#i-grid" /></svg></div><div class="insa-icon-badge" data-accent="green"><svg><use href="#i-layers" /></svg></div><div class="insa-icon-badge" data-accent="orange"><svg><use href="#i-sun" /></svg></div><div class="insa-icon-badge" data-accent="red"><svg><use href="#i-spark" /></svg></div></div></div>
+          </div>
+        </section>
+
+        <section class="preview-section preview-last" id="patterns" aria-labelledby="patterns-title"><div class="preview-section-heading"><div><p class="preview-eyebrow">03 / ПРИЁМЫ</p><h2 id="patterns-title">Свобода выбора</h2></div></div><div class="insa-card preview-pattern-card"><div><h3>Используй ровно то, что нужно</h3><p>Нижняя мобильная навигация, боковая панель, диалоги и движение можно адаптировать к другому стилю и технологическому стеку.</p></div><span class="preview-pattern-mark"><svg><use href="#i-arrow" /></svg></span></div></section>
+      </main>
+
+      <nav class="insa-floating-bar preview-mobile-nav" aria-label="Демонстрационная мобильная навигация"><a href="#overview" aria-current="page"><svg><use href="#i-home" /></svg><span>Обзор</span></a><a href="#colors"><svg><use href="#i-palette" /></svg><span>Цвета</span></a><a href="#components"><svg><use href="#i-layers" /></svg><span>Элементы</span></a></nav>
+    </div>
+
+    <div class="preview-dialog-backdrop" id="demo-dialog" hidden><div class="insa-dialog preview-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><button class="insa-button insa-button--ghost insa-button--icon preview-close" id="close-dialog" type="button" aria-label="Закрыть"><svg><use href="#i-close" /></svg></button><p class="preview-eyebrow">ПРИМЕР ДИАЛОГА</p><h2 id="dialog-title">Мягкая форма</h2><p>На узком экране этот диалог превращается в нижнюю панель. В новом проекте его поведение реализует выбранная тобой библиотека или нативные средства.</p><button class="insa-button" id="dialog-done" type="button">Понятно</button></div></div>
+  </body>
+</html>

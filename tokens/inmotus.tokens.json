@@ -1,5 +1,5 @@
 {
-  "$description": "InsaOS semantic colors exported from tokens/insaos.css. CSS is canonical; this DTCG JSON is a portable sRGB approximation of its HSL values.",
+  "$description": "InMotus semantic colors exported from tokens/inmotus.css. CSS is canonical; this DTCG JSON is a portable sRGB approximation of its HSL values.",
   "color": {
     "light": {
       "$type": "color",

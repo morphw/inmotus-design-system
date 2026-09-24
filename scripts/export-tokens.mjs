@@ -3,8 +3,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const cssPath = path.join(root, 'tokens', 'insaos.css');
-const outputPath = path.join(root, 'tokens', 'insaos.tokens.json');
+const cssPath = path.join(root, 'tokens', 'inmotus.css');
+const outputPath = path.join(root, 'tokens', 'inmotus.tokens.json');
 const css = await readFile(cssPath, 'utf8');
 
 function block(selector) {
@@ -32,15 +32,15 @@ function hslToColor(h, sPercent, lPercent) {
 
 function colors(selector) {
   const values = {};
-  for (const match of block(selector).matchAll(/--insa-([a-z-]+):\s*(\d+)\s+(\d+)%\s+(\d+)%;/gu)) {
+  for (const match of block(selector).matchAll(/--inmotus-([a-z-]+):\s*(\d+)\s+(\d+)%\s+(\d+)%;/gu)) {
     const [, name, h, s, l] = match;
     values[name] = { $value: hslToColor(Number(h), Number(s), Number(l)) };
   }
   return values;
 }
 
-const light = colors('.insaos-theme');
-const dark = colors('.insaos-theme[data-insaos-theme="dark"]');
+const light = colors('.inmotus-theme');
+const dark = colors('.inmotus-theme[data-inmotus-theme="dark"]');
 const lightNames = Object.keys(light).sort();
 const darkNames = Object.keys(dark).sort();
 if (lightNames.length !== 17 || lightNames.join('|') !== darkNames.join('|')) {
@@ -48,7 +48,7 @@ if (lightNames.length !== 17 || lightNames.join('|') !== darkNames.join('|')) {
 }
 
 const output = `${JSON.stringify({
-  $description: 'InsaOS semantic colors exported from tokens/insaos.css. CSS is canonical; this DTCG JSON is a portable sRGB approximation of its HSL values.',
+  $description: 'InMotus semantic colors exported from tokens/inmotus.css. CSS is canonical; this DTCG JSON is a portable sRGB approximation of its HSL values.',
   color: {
     light: { $type: 'color', ...light },
     dark: { $type: 'color', ...dark }

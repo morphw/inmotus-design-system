@@ -4,23 +4,23 @@ const themeIcon = themeButton.querySelector('use');
 const themeLabel = themeButton.querySelector('span');
 
 themeButton.addEventListener('click', () => {
-  const dark = body.dataset.insaosTheme !== 'dark';
-  body.dataset.insaosTheme = dark ? 'dark' : 'light';
+  const dark = body.dataset.inmotusTheme !== 'dark';
+  body.dataset.inmotusTheme = dark ? 'dark' : 'light';
   themeIcon.setAttribute('href', dark ? '#i-sun' : '#i-moon');
   themeLabel.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
   themeButton.setAttribute('aria-label', dark ? 'Включить светлую тему' : 'Включить тёмную тему');
 });
 
-document.querySelectorAll('.insa-segmented button').forEach((button) => {
+document.querySelectorAll('.inmotus-segmented button').forEach((button) => {
   button.addEventListener('click', () => {
     button.parentElement.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
   });
 });
 
-document.querySelectorAll('.preview-sidebar .insa-nav-item, .preview-mobile-nav a').forEach((link) => {
+document.querySelectorAll('.preview-sidebar .inmotus-nav-item, .preview-mobile-nav a').forEach((link) => {
   link.addEventListener('click', () => {
     const href = link.getAttribute('href');
-    document.querySelectorAll('.preview-sidebar .insa-nav-item, .preview-mobile-nav a').forEach((item) => {
+    document.querySelectorAll('.preview-sidebar .inmotus-nav-item, .preview-mobile-nav a').forEach((item) => {
       if (item.getAttribute('href') === href) item.setAttribute('aria-current', 'page');
       else item.removeAttribute('aria-current');
     });

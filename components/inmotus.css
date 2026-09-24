@@ -1,0 +1,264 @@
+/* Optional, dependency-free visual reference components.
+   Import after tokens/inmotus.css. Behavior belongs to the host application. */
+.inmotus-theme,
+.inmotus-theme * {
+  box-sizing: border-box;
+}
+
+.inmotus-theme :is(button, input, textarea, select) {
+  font: inherit;
+}
+
+.inmotus-theme .inmotus-page {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding: 2rem;
+}
+
+.inmotus-theme .inmotus-page-title {
+  margin: 0;
+  color: hsl(var(--inmotus-foreground));
+  font-size: var(--inmotus-text-title);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.inmotus-theme .inmotus-page-description {
+  max-width: 42rem;
+  margin: 0.5rem 0 0;
+  color: hsl(var(--inmotus-muted-foreground));
+  font-size: var(--inmotus-text-sm);
+  line-height: 1.5;
+}
+
+.inmotus-theme .inmotus-card {
+  border-radius: var(--inmotus-radius-card);
+  background: hsl(var(--inmotus-surface));
+  padding: var(--inmotus-space-4);
+  color: hsl(var(--inmotus-foreground));
+}
+
+.inmotus-theme .inmotus-card--interactive {
+  transition: background-color var(--inmotus-duration-base) var(--inmotus-ease-out);
+}
+
+.inmotus-theme .inmotus-card--interactive:hover {
+  background: hsl(var(--inmotus-surface-muted));
+}
+
+.inmotus-theme .inmotus-button {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--inmotus-radius-pill);
+  padding: 0.5rem 0.875rem;
+  background: hsl(var(--inmotus-foreground));
+  color: hsl(var(--inmotus-background));
+  font-size: var(--inmotus-text-sm);
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--inmotus-duration-base) var(--inmotus-ease-out),
+    transform var(--inmotus-duration-base) var(--inmotus-ease-out);
+}
+
+.inmotus-theme .inmotus-button:hover {
+  background: hsl(var(--inmotus-foreground) / 0.9);
+}
+
+.inmotus-theme .inmotus-button:active {
+  transform: scale(0.98);
+}
+
+.inmotus-theme .inmotus-button:focus-visible,
+.inmotus-theme .inmotus-input:focus-visible,
+.inmotus-theme .inmotus-nav-item:focus-visible,
+.inmotus-theme .inmotus-segmented button:focus-visible {
+  outline: 2px solid hsl(var(--inmotus-ring));
+  outline-offset: 2px;
+}
+
+.inmotus-theme .inmotus-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inmotus-theme .inmotus-button--secondary {
+  border-color: hsl(var(--inmotus-border));
+  background: hsl(var(--inmotus-surface));
+  color: hsl(var(--inmotus-foreground));
+  box-shadow: var(--inmotus-shadow-surface);
+}
+
+.inmotus-theme .inmotus-button--secondary:hover {
+  background: hsl(var(--inmotus-surface-muted));
+}
+
+.inmotus-theme .inmotus-button--quiet {
+  background: hsl(var(--inmotus-muted));
+  color: hsl(var(--inmotus-foreground));
+}
+
+.inmotus-theme .inmotus-button--quiet:hover {
+  background: hsl(var(--inmotus-input));
+}
+
+.inmotus-theme .inmotus-button--ghost {
+  background: transparent;
+  color: hsl(var(--inmotus-foreground));
+}
+
+.inmotus-theme .inmotus-button--ghost:hover {
+  background: hsl(var(--inmotus-muted));
+}
+
+.inmotus-theme .inmotus-button--small {
+  min-height: 2.25rem;
+  padding-inline: 0.625rem;
+}
+
+.inmotus-theme .inmotus-button--icon {
+  width: 2.5rem;
+  padding: 0;
+}
+
+.inmotus-theme .inmotus-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: hsl(var(--inmotus-muted));
+  color: hsl(var(--inmotus-foreground));
+  font-size: var(--inmotus-text-base);
+  transition: background-color var(--inmotus-duration-base) var(--inmotus-ease-out);
+}
+
+.inmotus-theme .inmotus-input::placeholder {
+  color: hsl(var(--inmotus-muted-foreground));
+}
+
+.inmotus-theme .inmotus-input:focus-visible {
+  background: hsl(var(--inmotus-surface));
+}
+
+.inmotus-theme .inmotus-icon-badge {
+  --inmotus-icon-color: var(--inmotus-purple);
+  display: inline-grid;
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  place-items: center;
+  border: 1px solid hsl(var(--inmotus-icon-color) / 0.15);
+  border-radius: var(--inmotus-radius-card);
+  background: hsl(var(--inmotus-icon-color) / 0.1);
+  color: hsl(var(--inmotus-icon-color));
+}
+
+.inmotus-theme .inmotus-icon-badge[data-accent="blue"] { --inmotus-icon-color: var(--inmotus-blue); }
+.inmotus-theme .inmotus-icon-badge[data-accent="green"] { --inmotus-icon-color: var(--inmotus-green); }
+.inmotus-theme .inmotus-icon-badge[data-accent="orange"] { --inmotus-icon-color: var(--inmotus-orange); }
+.inmotus-theme .inmotus-icon-badge[data-accent="purple"] { --inmotus-icon-color: var(--inmotus-purple); }
+.inmotus-theme .inmotus-icon-badge[data-accent="red"] { --inmotus-icon-color: var(--inmotus-red); }
+
+.inmotus-theme .inmotus-floating-bar {
+  border: 1px solid hsl(var(--inmotus-border));
+  border-radius: 1.75rem;
+  background: hsl(var(--inmotus-surface) / 0.9);
+  box-shadow: var(--inmotus-shadow-floating);
+  backdrop-filter: blur(24px);
+}
+
+.inmotus-theme .inmotus-segmented {
+  display: inline-flex;
+  gap: 0.25rem;
+  border-radius: 1.15rem;
+  padding: 0.25rem;
+  background: hsl(var(--inmotus-muted));
+}
+
+.inmotus-theme .inmotus-segmented button {
+  min-height: 2.25rem;
+  border: 0;
+  border-radius: 0.9rem;
+  padding: 0.375rem 0.75rem;
+  background: transparent;
+  color: hsl(var(--inmotus-muted-foreground));
+  font-size: var(--inmotus-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--inmotus-duration-base) var(--inmotus-ease-out),
+    background-color var(--inmotus-duration-base) var(--inmotus-ease-out);
+}
+
+.inmotus-theme .inmotus-segmented button[aria-selected="true"],
+.inmotus-theme .inmotus-segmented button[aria-pressed="true"] {
+  background: hsl(var(--inmotus-foreground));
+  color: hsl(var(--inmotus-background));
+  font-weight: 600;
+}
+
+.inmotus-theme .inmotus-nav-item {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  padding: 0.5rem 0.75rem;
+  color: hsl(var(--inmotus-muted-foreground));
+  font-size: var(--inmotus-text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--inmotus-duration-base) var(--inmotus-ease-out),
+    color var(--inmotus-duration-base) var(--inmotus-ease-out);
+}
+
+.inmotus-theme .inmotus-nav-item:hover,
+.inmotus-theme .inmotus-nav-item[aria-current="page"] {
+  background: hsl(var(--inmotus-surface));
+  color: hsl(var(--inmotus-foreground));
+}
+
+.inmotus-theme .inmotus-nav-item[aria-current="page"] {
+  box-shadow: var(--inmotus-shadow-surface);
+}
+
+.inmotus-theme .inmotus-overlay {
+  background: hsl(var(--inmotus-background) / 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.inmotus-theme .inmotus-dialog {
+  border: 1px solid hsl(var(--inmotus-border));
+  border-radius: var(--inmotus-radius-card);
+  background: hsl(var(--inmotus-surface));
+  padding: 1.25rem;
+  box-shadow: var(--inmotus-shadow-floating);
+}
+
+@media (max-width: 767px) {
+  .inmotus-theme .inmotus-page {
+    padding: 1.25rem 1rem 8rem;
+  }
+
+  .inmotus-theme .inmotus-dialog {
+    border-radius: 1.75rem 1.75rem 0 0;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inmotus-theme .inmotus-card--interactive,
+  .inmotus-theme .inmotus-button,
+  .inmotus-theme .inmotus-input,
+  .inmotus-theme .inmotus-segmented button,
+  .inmotus-theme .inmotus-nav-item {
+    transition-duration: 1ms;
+  }
+}

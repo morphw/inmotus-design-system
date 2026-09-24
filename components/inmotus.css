@@ -167,6 +167,19 @@
 .inmotus-theme .inmotus-icon-badge[data-accent="purple"] { --inmotus-icon-color: var(--inmotus-purple); }
 .inmotus-theme .inmotus-icon-badge[data-accent="red"] { --inmotus-icon-color: var(--inmotus-red); }
 
+.inmotus-theme .inmotus-icon-badge--solid {
+  border-color: transparent;
+  background: hsl(var(--inmotus-icon-color));
+  color: white;
+  box-shadow: var(--inmotus-shadow-surface);
+}
+
+.inmotus-theme .inmotus-icon-badge--small {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+}
+
 .inmotus-theme .inmotus-floating-bar {
   border: 1px solid hsl(var(--inmotus-border));
   border-radius: 1.75rem;

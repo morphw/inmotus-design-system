@@ -1,0 +1,40 @@
+body { margin: 0; min-height: 100dvh; }
+header, .settings, .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+header { align-items: flex-start; }
+.eyebrow { color: hsl(var(--inmotus-muted-foreground)); font-size: .7rem; letter-spacing: .14em; }
+.settings { margin-block: 2rem 1rem; flex-wrap: wrap; }
+a { color: hsl(var(--inmotus-foreground)); }
+select { margin-left: .5rem; padding: .4rem; border: 1px solid hsl(var(--inmotus-border)); border-radius: .5rem; background: hsl(var(--inmotus-surface)); color: inherit; }
+.status, section p { font-size: .875rem; color: hsl(var(--inmotus-muted-foreground)); line-height: 1.5; }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+section { min-width: 0; min-height: 13rem; }
+section h2, .sheet h2 { margin: 0; font-size: 1.125rem; font-weight: 600; }
+.row { justify-content: flex-start; flex-wrap: wrap; margin-top: 1.5rem; }
+.content-button { margin-top: 1rem; padding: .75rem 0; border: 0; background: transparent; color: inherit; cursor: pointer; }
+.content-button span { display: inline-block; }
+.elastic-group { position: relative; margin-top: 1.5rem; isolation: isolate; }
+.elastic-group :is(button, a) { position: relative; z-index: 1; border: 0; background: transparent; color: hsl(var(--inmotus-muted-foreground)); cursor: pointer; }
+.elastic-group :is(button, a):focus-visible, .switch:focus-visible, .popup button:focus-visible { outline: 2px solid hsl(var(--inmotus-ring)); outline-offset: 2px; }
+.segmented { display: flex; width: fit-content; max-width: 100%; padding: .25rem; border-radius: 1.15rem; background: hsl(var(--inmotus-muted)); }
+.segmented button { height: 2.25rem; padding: 0 .75rem; border-radius: .9rem; font-size: .875rem; }
+.segmented button[aria-pressed="true"] { color: hsl(var(--inmotus-background)); font-weight: 600; }
+.segmented .inmotus-elastic-indicator { top: .25rem; bottom: .25rem; border-radius: .9rem; background: hsl(var(--inmotus-foreground)); }
+.navigation { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: .5rem; gap: .25rem; overflow: hidden; border-radius: 2.15rem; }
+.navigation a { display: grid; place-items: center; min-height: 3.25rem; padding: 0 .25rem; border-radius: 1.65rem; font-size: .75rem; text-decoration: none; }
+.navigation a[aria-current] { color: hsl(var(--inmotus-accent)); font-weight: 600; }
+.navigation .inmotus-elastic-indicator { top: .25rem; bottom: .25rem; border-radius: 1.9rem; background: hsl(var(--inmotus-input)); box-shadow: var(--inmotus-shadow-surface); }
+.switch { position: relative; display: inline-flex; width: 3.35rem; height: 2rem; padding: .25rem; border: 0; border-radius: 999px; background: hsl(var(--inmotus-muted)); box-shadow: 0 0 0 1px hsl(var(--inmotus-border) / .45); cursor: pointer; }
+.switch[aria-checked="true"] { background: hsl(var(--inmotus-accent)); }
+.switch-track { position: relative; width: 100%; height: 100%; }
+.switch-thumb { top: 0; height: 1.5rem; border-radius: 999px; background: hsl(var(--inmotus-surface)); box-shadow: var(--inmotus-shadow-surface); }
+.popup-anchor { position: relative; display: inline-block; margin-top: 1rem; }
+.popup { position: absolute; z-index: 5; top: calc(100% + .25rem); right: 0; width: 13rem; padding: .25rem; border: 1px solid hsl(var(--inmotus-border)); border-radius: 1rem; background: hsl(var(--inmotus-surface)); box-shadow: var(--inmotus-shadow-menu); }
+.popup[data-side="top"] { top: auto; bottom: calc(100% + .25rem); transform-origin: bottom right; }
+.popup button { display: block; width: 100%; padding: .65rem .75rem; border: 0; border-radius: .75rem; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.popup button:hover, .popup button:focus { background: hsl(var(--inmotus-muted)); }
+.placement { display: block; margin-top: 1rem; font-size: .875rem; }
+.sheet-overlay { position: fixed; inset: 0; z-index: 10; background: hsl(var(--inmotus-background) / .7); backdrop-filter: blur(4px); }
+.sheet { position: fixed; inset-inline: 0; bottom: 0; z-index: 11; padding: 1.5rem 1.5rem calc(env(safe-area-inset-bottom) + 1.5rem); border-radius: 1.75rem 1.75rem 0 0; border-top: 1px solid hsl(var(--inmotus-border)); background: hsl(var(--inmotus-surface)); box-shadow: var(--inmotus-shadow-floating); }
+.sheet p { color: hsl(var(--inmotus-muted-foreground)); }
+[hidden] { display: none !important; }
+@media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } header { flex-direction: column; } .inmotus-theme .inmotus-page { padding-bottom: 2rem; } }

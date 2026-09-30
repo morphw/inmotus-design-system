@@ -1,0 +1,60 @@
+/* Import after components/inmotus.css. Also works with another theme. */
+.inmotus-theme, [data-inmotus-feedback] {
+  --inmotus-press-scale: 1.06;
+  --inmotus-press-down: 90ms;
+  --inmotus-press-release: 360ms;
+  --inmotus-feedback-open: 320ms;
+  --inmotus-feedback-close: 180ms;
+  --inmotus-feedback-open-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --inmotus-feedback-close-ease: cubic-bezier(0.32, 0, 0.67, 0);
+}
+
+:is(.inmotus-theme, [data-inmotus-feedback]) :is(button:not([data-inmotus-press="none"]):not([data-inmotus-press="content"]):not([role="menuitem"]), a[data-inmotus-press="button"], button[data-inmotus-press="content"] > :first-child) {
+  transition-property: color, background-color, border-color, box-shadow, opacity, scale;
+  transition-duration: 200ms, 200ms, 200ms, 200ms, 200ms, var(--inmotus-press-release);
+  transition-timing-function: ease-out, ease-out, ease-out, ease-out, ease-out, cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(.inmotus-theme, [data-inmotus-feedback]) :is(button:active:not([data-inmotus-press="none"]):not([data-inmotus-press="content"]):not([role="menuitem"]):not(:disabled):not([aria-disabled="true"]), a[data-inmotus-press="button"]:active:not([aria-disabled="true"]), button[data-inmotus-press="content"]:active:not(:disabled):not([aria-disabled="true"]) > :first-child) {
+  scale: var(--inmotus-press-scale);
+  transition-duration: var(--inmotus-press-down);
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.inmotus-elastic-indicator {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  transform-origin: center;
+  opacity: 0;
+}
+
+.inmotus-popup-motion {
+  --inmotus-popup-open-offset: -6px;
+  --inmotus-popup-close-offset: -6px;
+  transform-origin: var(--radix-select-content-transform-origin, top right);
+}
+.inmotus-popup-motion[data-side="top"] { --inmotus-popup-open-offset: 6px; --inmotus-popup-close-offset: 6px; }
+.inmotus-menu-motion { --inmotus-popup-close-offset: -4px; }
+.inmotus-popup-motion[data-state="open"] { animation: inmotus-popup-in var(--inmotus-feedback-open, 320ms) var(--inmotus-feedback-open-ease, cubic-bezier(0.32, 0.72, 0, 1)) both; }
+.inmotus-popup-motion[data-state="closed"] { animation: inmotus-popup-out var(--inmotus-feedback-close, 180ms) var(--inmotus-feedback-close-ease, cubic-bezier(0.32, 0, 0.67, 0)) both; pointer-events: none !important; }
+.inmotus-action-sheet-motion[data-state="open"] { animation: inmotus-sheet-in 400ms var(--inmotus-feedback-open-ease, cubic-bezier(0.32, 0.72, 0, 1)) both; }
+.inmotus-action-sheet-motion[data-state="closed"] { animation: inmotus-sheet-out 400ms var(--inmotus-feedback-close-ease, cubic-bezier(0.32, 0, 0.67, 0)) both; pointer-events: none !important; }
+.inmotus-sheet-overlay-motion[data-state="open"] { animation: inmotus-overlay-in 400ms ease both; }
+.inmotus-sheet-overlay-motion[data-state="closed"] { animation: inmotus-overlay-out 400ms ease both; pointer-events: none !important; }
+/* With a gesture-driven sheet library, preserve its transforms and use timing only. */
+.inmotus-action-sheet-timing { animation-duration: 400ms !important; transition-duration: 400ms !important; }
+
+@keyframes inmotus-popup-in { from { opacity: 0; transform: translateY(var(--inmotus-popup-open-offset, -6px)) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes inmotus-popup-out { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(var(--inmotus-popup-close-offset, -6px)) scale(0.96); } }
+@keyframes inmotus-sheet-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes inmotus-sheet-out { from { transform: translateY(0); } to { transform: translateY(100%); } }
+@keyframes inmotus-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes inmotus-overlay-out { from { opacity: 1; } to { opacity: 0; } }
+
+[data-inmotus-feedback="off"] { --inmotus-press-scale: 1; --inmotus-press-down: 1ms; --inmotus-press-release: 1ms; }
+[data-inmotus-feedback="off"] :is(.inmotus-popup-motion, .inmotus-action-sheet-motion, .inmotus-sheet-overlay-motion, .inmotus-action-sheet-timing) { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+@media (prefers-reduced-motion: reduce) {
+  [data-inmotus-feedback="system"] { --inmotus-press-scale: 1; --inmotus-press-down: 1ms; --inmotus-press-release: 1ms; }
+  [data-inmotus-feedback="system"] :is(.inmotus-popup-motion, .inmotus-action-sheet-motion, .inmotus-sheet-overlay-motion, .inmotus-action-sheet-timing) { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}

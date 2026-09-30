@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InMotus — отклики</title>
+  <link rel="stylesheet" href="../tokens/inmotus.css">
+  <link rel="stylesheet" href="../components/inmotus.css">
+  <link rel="stylesheet" href="../motion/inmotus.css">
+  <link rel="stylesheet" href="motion.css">
+  <script type="importmap">{"imports":{"motion":"https://esm.sh/motion@12.42.2?bundle"}}</script>
+  <script type="module" src="motion.js"></script>
+</head>
+<body class="inmotus-theme" data-inmotus-theme="light" data-inmotus-feedback="full">
+<main class="inmotus-page">
+  <header><div><p class="eyebrow">INMOTUS / ОТКЛИКИ</p><h1 class="inmotus-page-title">Движение в ответ</h1><p class="inmotus-page-description">Нажми, переключи, быстро смени направление. Подписи остаются на месте, фон мягко движется.</p></div><button id="theme" class="inmotus-button inmotus-button--secondary">Тёмная тема</button></header>
+  <div class="settings"><a href="index.html">Цвета и компоненты</a><label>Движение <select id="mode"><option value="full">Полный отклик</option><option value="system">По системе</option><option value="off">Без движения</option></select></label></div>
+  <p id="engine-status" class="status" role="status">Загружается движок капсул…</p>
+  <div class="gallery">
+    <section class="inmotus-card"><h2>Кнопки</h2><p>Увеличение при нажатии и мягкий возврат после короткого тапа.</p><div class="row"><button id="press" class="inmotus-button">Попробовать</button><button class="inmotus-button inmotus-button--secondary">Вторичная</button><button id="disabled" class="inmotus-button" disabled>Недоступно</button></div><button id="content-press" data-inmotus-press="content" class="content-button"><span>Только содержимое строки</span></button></section>
+    <section class="inmotus-card"><h2>Сегменты</h2><p>Один фон растягивается между пунктами разной ширины.</p><div id="segments" class="elastic-group segmented" role="group" aria-label="Вид"><span class="inmotus-elastic-indicator" aria-hidden="true"></span><button aria-pressed="true">День</button><button aria-pressed="false">Неделя</button><button aria-pressed="false">Весь месяц</button></div></section>
+    <section class="inmotus-card"><h2>Нижняя навигация</h2><p>Передний край приходит раньше, хвост догоняет. Фон слегка раздувается.</p><nav id="navigation" class="elastic-group navigation inmotus-floating-bar" aria-label="Пример навигации"><span class="inmotus-elastic-indicator" aria-hidden="true"></span><a href="#overview" aria-current="page">Обзор</a><a href="#projects">Проекты</a><a href="#settings">Настройки</a></nav></section>
+    <section class="inmotus-card"><h2>Тумблер</h2><p>Круг вытягивается во время движения и возвращает форму в конце.</p><div class="row"><span id="switch-label">Уведомления</span><button id="switch" class="switch" role="switch" aria-checked="false" aria-labelledby="switch-label"><span class="switch-track"><span class="inmotus-elastic-indicator switch-thumb" aria-hidden="true"></span></span></button></div></section>
+    <section class="inmotus-card"><h2>Выпадающий список</h2><p>Открытие от триггера, затем отдельная анимация закрытия.</p><div class="popup-anchor"><button id="popup-trigger" class="inmotus-button inmotus-button--quiet" aria-haspopup="menu" aria-expanded="false">Выбрать вид</button><div id="popup" class="inmotus-popup-motion popup" data-side="bottom" role="menu" aria-label="Вид списка" hidden><button role="menuitem">Компактный</button><button role="menuitem">Подробный</button><button role="menuitem">Карточки</button></div></div><label class="placement">Размещение <select id="side"><option value="bottom">Под триггером</option><option value="top">Над триггером</option></select></label></section>
+    <section class="inmotus-card"><h2>Меню действий на мобильном</h2><p>Нижняя шторка с плавным появлением и завершённым закрытием.</p><button id="sheet-trigger" class="inmotus-button inmotus-button--secondary">Открыть действия</button></section>
+  </div>
+</main>
+<div id="sheet-root" hidden><div class="inmotus-sheet-overlay-motion sheet-overlay"></div><div class="inmotus-action-sheet-motion sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1"><h2 id="sheet-title">Действия</h2><p>Пример переиспользуемого отклика шторки.</p><button id="sheet-close" class="inmotus-button">Готово</button></div></div>
+</body>
+</html>

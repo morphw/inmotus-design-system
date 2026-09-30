@@ -63,15 +63,17 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color var(--inmotus-duration-base) var(--inmotus-ease-out),
-    transform var(--inmotus-duration-base) var(--inmotus-ease-out);
+    scale 360ms var(--inmotus-ease-out);
 }
 
 .inmotus-theme .inmotus-button:hover {
   background: hsl(var(--inmotus-foreground) / 0.9);
 }
 
-.inmotus-theme .inmotus-button:active {
-  transform: scale(0.98);
+.inmotus-theme .inmotus-button:active:not([data-inmotus-press="none"]):not([data-inmotus-press="content"]):not(:disabled):not([aria-disabled="true"]) {
+  scale: var(--inmotus-press-scale, 1.06);
+  transition-duration: var(--inmotus-press-down, 90ms);
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 
 .inmotus-theme .inmotus-button:focus-visible,
